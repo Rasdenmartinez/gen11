@@ -12,4 +12,6 @@ public interface IDepartamentoService {
     public Departamento insert(Departamento departamento);
 
     public Departamento update(Departamento departamento);
+
+    public void delete(Long id);
 }

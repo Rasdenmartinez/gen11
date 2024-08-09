@@ -37,6 +37,10 @@ public class DepartamentoController {
     public Departamento update(@RequestBody Departamento departamento) {
         return departamentoService.update(departamento);
     }
+    @DeleteMapping("departamento/{id}")
+    public void delete(@PathVariable Long id) {
+        departamentoService.delete(id);
+    }
 
 
 

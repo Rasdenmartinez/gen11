@@ -40,5 +40,10 @@ public class DepartamentoService implements IDepartamentoService {
         return departamentoRepository.save(departamento);
     }
 
+    @Override
+    public void delete(Long id) {
+        departamentoRepository.deleteById(id);
+    }
+
 
 }
