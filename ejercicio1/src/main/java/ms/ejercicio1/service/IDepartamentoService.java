@@ -8,4 +8,6 @@ public interface IDepartamentoService {
     public List<Departamento> readAll();
 
     public Departamento readById(Long id);
+
+    public Departamento insert(Departamento departamento);
 }

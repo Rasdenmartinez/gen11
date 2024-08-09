@@ -6,10 +6,7 @@ import ms.ejercicio1.service.IDepartamentoService;
 import ms.ejercicio1.service.impl.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,9 +22,15 @@ public class DepartamentoController {
         return departamentoService.readAll();
     }
 
-    @GetMapping("departamento/{id}")
+    @GetMapping("/departamento/{id}")
     public Departamento readById(@PathVariable Long id) {
         return departamentoService.readById(id);
     }
+
+    @PostMapping("/departamento")
+    public Departamento insert(@RequestBody Departamento departamento) {
+        return departamentoService.insert(departamento);
+    }
+
 
 }
