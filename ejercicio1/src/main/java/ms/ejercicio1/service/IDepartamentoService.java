@@ -10,4 +10,6 @@ public interface IDepartamentoService {
     public Departamento readById(Long id);
 
     public Departamento insert(Departamento departamento);
+
+    public Departamento update(Departamento departamento);
 }

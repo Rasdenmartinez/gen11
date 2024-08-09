@@ -30,7 +30,15 @@ public class DepartamentoController {
     @PostMapping("/departamento")
     public Departamento insert(@RequestBody Departamento departamento) {
         return departamentoService.insert(departamento);
+
     }
+
+    @PutMapping("/departamento")
+    public Departamento update(@RequestBody Departamento departamento) {
+        return departamentoService.update(departamento);
+    }
+
+
 
 
 }

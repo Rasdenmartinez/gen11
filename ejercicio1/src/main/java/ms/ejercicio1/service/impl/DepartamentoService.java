@@ -35,5 +35,10 @@ public class DepartamentoService implements IDepartamentoService {
         return departamentoRepository.save(departamento);
     }
 
+    @Override
+    public Departamento update(Departamento departamento) {
+        return departamentoRepository.save(departamento);
+    }
+
 
 }
