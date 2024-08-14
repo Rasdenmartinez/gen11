@@ -45,5 +45,15 @@ public class DepartamentoService implements IDepartamentoService {
         departamentoRepository.deleteById(id);
     }
 
+    @Override
+    public List<Departamento> buscarDireccion(String direccion,Double graterThan) {
+        return departamentoRepository.findByDireccionContainingIgnoreCaseAndM2GreaterThanEqual(direccion,graterThan);
+    }
+
+    @Override
+    public List<Departamento> precioLower(Double precio) {
+        return departamentoRepository.findByPrecioLessThan(precio);
+    }
+
 
 }

@@ -14,4 +14,8 @@ public interface IDepartamentoService {
     public Departamento update(Departamento departamento);
 
     public void delete(Long id);
+
+    public List<Departamento> buscarDireccion(String direccion,Double greaterThan);
+
+    public List<Departamento> precioLower(Double precio);
 }

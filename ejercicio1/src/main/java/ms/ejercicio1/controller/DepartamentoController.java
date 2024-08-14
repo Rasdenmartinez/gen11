@@ -1,5 +1,6 @@
 package ms.ejercicio1.controller;
 
+import jakarta.websocket.server.PathParam;
 import lombok.Locked;
 import ms.ejercicio1.entity.Departamento;
 import ms.ejercicio1.service.IDepartamentoService;
@@ -41,6 +42,15 @@ public class DepartamentoController {
     public void delete(@PathVariable Long id) {
         departamentoService.delete(id);
     }
+    @GetMapping("departamento/direccion")
+    public List<Departamento> direccion(@RequestParam String direccion, @RequestParam Double m2GreaterThan) {
+        return departamentoService.buscarDireccion(direccion,m2GreaterThan);
+    }
+    @GetMapping("departamento/precioLowerThan")
+    public List<Departamento> precioLowerThan(@RequestParam Double precio) {
+        return departamentoService.precioLower(precio);
+    }
+
 
 
 
