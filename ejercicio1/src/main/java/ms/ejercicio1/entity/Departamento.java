@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "departamento")
 @Data
@@ -23,5 +25,10 @@ public class Departamento {
     private String direccion;
     @Column(name = "is_active")
     private Boolean isActive;
+    @Column(name = "create_date")
+    private LocalDateTime createDate;
+
+    @Column(name = "update_date")
+    private LocalDateTime updateDate;
 
 }
