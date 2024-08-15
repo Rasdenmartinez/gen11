@@ -1,9 +1,15 @@
 package ms.ejercicio1.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "departamento")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Departamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,46 +21,7 @@ public class Departamento {
     private Double precio;
     @Column(name = "direccion")
     private String direccion;
+    @Column(name = "is_active")
+    private Boolean isActive;
 
-    public Departamento() {
-    }
-
-    public Departamento(Long id, Double m2, Double precio, String direccion) {
-        this.id = id;
-        this.m2 = m2;
-        this.precio = precio;
-        this.direccion = direccion;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Double getM2() {
-        return m2;
-    }
-
-    public void setM2(Double m2) {
-        this.m2 = m2;
-    }
-
-    public Double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Double precio) {
-        this.precio = precio;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
 }
