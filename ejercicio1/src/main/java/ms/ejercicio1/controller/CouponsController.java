@@ -1,6 +1,7 @@
 package ms.ejercicio1.controller;
 
 import ms.ejercicio1.model.Coupons;
+import ms.ejercicio1.model.CouponsResponse;
 import ms.ejercicio1.service.ICouponsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,7 @@ public class CouponsController {
     ICouponsService couponsService;
 
     @GetMapping("/coupons")
-    public List<Coupons> readAll(){
+    public CouponsResponse readAll(){
         return couponsService.readAll();
     }
 }
