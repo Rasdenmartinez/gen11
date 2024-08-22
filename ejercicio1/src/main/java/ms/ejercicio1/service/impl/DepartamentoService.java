@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,16 +45,19 @@ public class DepartamentoService implements IDepartamentoService {
     }
 
     @Override
-    public void delete(Long id) {
+    public Boolean delete(Long id) {
+        Boolean bandera=false;
             Optional<Departamento> departamentoOptional=departamentoRepository.findById(id);
             if(departamentoOptional.isPresent()){
                 Departamento departamento=departamentoOptional.get();
                 departamento.setIsActive(false);
                 departamentoRepository.save(departamento);
                 log.info("Departamento {} deleted", id);
+                bandera=true;
             }else{
                 log.error("El id de departamento no existe");
             }
+            return bandera;
     }
 
     @Override
@@ -64,6 +68,14 @@ public class DepartamentoService implements IDepartamentoService {
     @Override
     public List<Departamento> precioLower(Double precio) {
         return departamentoRepository.findByPrecioLessThan(precio);
+    }
+
+    public Double sumar(Double... numeros){
+        Double sum=0.0;
+        for(Double numero:numeros){
+            sum+=numero;
+        }
+        return sum;
     }
 
 
